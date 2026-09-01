@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform, AnimatePresence, Variants } from "framer-motion";
 import { WORLDS, WorldData } from "@/data/worlds";
 import { LogIn } from "lucide-react";
 
@@ -18,7 +18,7 @@ export function DuniyaHome({ onSelectWorld }: DuniyaHomeProps) {
   const y2 = useTransform(scrollY, [0, 1000], [0, -300]);
 
   // Stagger animation for the grid
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -29,7 +29,7 @@ export function DuniyaHome({ onSelectWorld }: DuniyaHomeProps) {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     show: { 
       opacity: 1, 
