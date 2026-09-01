@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="public/logo.png" alt="माँ Sound Parlour Logo" width="180"/>
+<img src="public/Duniya/logo.png" alt="माँ Sound Parlour Logo" width="180"/>
 
 # 🎵 माँ साउंड पार्लर — DUNIYA
 
