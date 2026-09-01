@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-brand-red: #8B0000;
+  --color-brand-mustard: #FFDB58;
+  --color-brand-green: #556B2F;
+  --color-brand-brown: #8B4513;
+  --color-brand-amber: #FFBF00;
+  --color-brand-cream: #FFFDD0;
+  --color-brand-charcoal: #36454F;
+  --font-hindi: var(--font-yatra-one), cursive;
+  --font-sans: var(--font-noto-sans), sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Cinematic text shadow */
+.text-cinematic {
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.8), 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Hide Next.js Dev/Turbopack Indicator */
+nextjs-portal {
+  display: none !important;
+}
+
+/* Custom scrollbar for some UI elements if needed */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
