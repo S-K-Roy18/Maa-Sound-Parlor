@@ -15,7 +15,7 @@ export const WORLDS: WorldData[] = [
     description: "वो साल जहाँ सब कुछ थोड़ा धीमा था।",
     mediaType: "video",
     background: "/Duniya/1997.mp4",
-    playlistId: "PLAFjPVdERAkt7jNU1XW7EWXHLyYyf7Sux",
+    playlistId: "PL4OqLl4qvLkd0AwxCIJVAD0U3fUAKVzM_",
   },
   {
     id: "general-dibba",
@@ -36,9 +36,9 @@ export const WORLDS: WorldData[] = [
   {
     id: "chalti-bus",
     title: "चलती बस",
-    description: "सीट मिले या न मिले, गाना चलता रहना चाहिए।",
-    mediaType: "image",
-    background: "/Duniya/Chalti bus.png",
+    description: "सीट मिले या ना मिले, गाना चलता रहना चाहिए।",
+    mediaType: "video",
+    background: "/Duniya/Chalti bus.mp4",
     playlistId: "PL0umg_TNpoZTTdZVIi5tfX69pRmoMFGna",
   },
   {
@@ -53,8 +53,8 @@ export const WORLDS: WorldData[] = [
     id: "raju-saloon",
     title: "राजू सलून",
     description: "बाल कटेंगे, बातें मुफ्त हैं।",
-    mediaType: "image",
-    background: "/Duniya/Raju saloon.png",
+    mediaType: "video",
+    background: "/Duniya/Raju saloon.mp4",
     playlistId: "PLq-bT4s33RYADNkcClDkLPovaKJx0HTDM",
   },
   {
