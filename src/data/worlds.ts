@@ -104,6 +104,6 @@ export const WORLDS: WorldData[] = [
     description: "जहाँ मन की बात बिना कहे भी सुनी जाती है।",
     mediaType: "video",
     background: "/Duniya/Manokamona mandir.mp4",
-    playlistId: "PL9bw4S5ePsEE0jGfUgUMvzeWAaMPcqHL9",
+    playlistId: "PLKRmqBRVje-jjp9Y1hnETx4uIDqIwJMqo",
   },
 ];
