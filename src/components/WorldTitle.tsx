@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { WorldData } from "@/data/worlds";
+import { LiveChat } from "./LiveChat";
 
 interface WorldTitleProps {
   world: WorldData;
@@ -29,6 +30,10 @@ export function WorldTitle({ world }: WorldTitleProps) {
         <p className="text-lg md:text-xl font-hindi text-brand-cream/80 text-cinematic mt-4 max-w-lg mx-auto">
           {world.description}
         </p>
+        
+        <div className="pointer-events-auto flex justify-center">
+          <LiveChat />
+        </div>
       </motion.div>
     </div>
   );
