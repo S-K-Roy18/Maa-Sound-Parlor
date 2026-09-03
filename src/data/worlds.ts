@@ -98,4 +98,12 @@ export const WORLDS: WorldData[] = [
     background: "/Duniya/Chhat wali shaam.mp4",
     playlistId: "PLO6WOx_nE9UI7WTcetgVrt97UCWCNwL27",
   },
+  {
+    id: "manokamna-mandir",
+    title: "मनोकामना मंदिर",
+    description: "जहाँ मन की बात बिना कहे भी सुनी जाती है।",
+    mediaType: "video",
+    background: "/Duniya/Manokamona mandir.mp4",
+    playlistId: "PL9bw4S5ePsEE0jGfUgUMvzeWAaMPcqHL9",
+  },
 ];
