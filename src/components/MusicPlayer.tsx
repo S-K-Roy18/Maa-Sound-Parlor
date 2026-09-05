@@ -30,6 +30,14 @@ export function MusicPlayer({ playlistId }: MusicPlayerProps) {
   const [autoplayBlocked, setAutoplayBlocked] = useState(false);
   const progressInterval = useRef<NodeJS.Timeout | null>(null);
 
+  const [savedIndex] = useState(() => {
+    if (typeof window !== "undefined") {
+      const idx = localStorage.getItem(`duniya_playlist_idx_${playlistId}`);
+      return idx ? parseInt(idx, 10) : 0;
+    }
+    return 0;
+  });
+
   const updateSongData = useCallback((playerInstance: any) => {
     if (!playerInstance) return;
     try {
@@ -66,6 +74,15 @@ export function MusicPlayer({ playlistId }: MusicPlayerProps) {
       setDuration(event.target.getDuration());
       updateSongData(event.target);
       
+      try {
+        const currentIndex = event.target.getPlaylistIndex();
+        if (currentIndex !== undefined && currentIndex !== null && currentIndex >= 0) {
+          localStorage.setItem(`duniya_playlist_idx_${playlistId}`, currentIndex.toString());
+        }
+      } catch (e) {
+        console.error("Error getting playlist index", e);
+      }
+
       if (progressInterval.current) clearInterval(progressInterval.current);
       progressInterval.current = setInterval(() => {
         setProgress(event.target.getCurrentTime());
@@ -172,6 +189,7 @@ export function MusicPlayer({ playlistId }: MusicPlayerProps) {
             playerVars: {
               listType: "playlist",
               list: playlistId,
+              index: savedIndex,
               autoplay: 1,
               controls: 0,
               disablekb: 1,

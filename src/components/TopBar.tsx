@@ -1,30 +1,126 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowLeft, Users } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Users, ChevronDown, ChevronUp, Check } from "lucide-react";
+import { WORLDS, WorldData } from "@/data/worlds";
 
 interface TopBarProps {
   onBack: () => void;
+  currentWorldId: string;
+  onSelectWorld: (world: WorldData) => void;
 }
 
-export function TopBar({ onBack }: TopBarProps) {
+export function TopBar({ onBack, currentWorldId, onSelectWorld }: TopBarProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.8 }}
-      className="absolute top-0 left-0 right-0 p-6 flex justify-between items-start z-20"
+      className="absolute top-0 left-0 right-0 p-6 flex justify-between items-start z-50 pointer-events-none"
     >
-      <button
-        onClick={onBack}
-        className="group flex items-center gap-2 text-white/70 hover:text-white transition-colors duration-300 font-hindi text-lg"
-      >
-        <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-        दुनिया
-      </button>
+      {/* LEFT: Duniya Selector Popover */}
+      <div className="relative pointer-events-auto">
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="group flex items-center gap-1.5 px-3.5 py-1 bg-black/40 backdrop-blur-md rounded-full border border-white/10 text-white/90 hover:bg-black/60 hover:text-white transition-all duration-300 font-hindi text-lg shadow-[0_4px_16px_rgba(0,0,0,0.4)]"
+        >
+          दुनिया
+          {isOpen ? (
+            <ChevronUp className="w-4 h-4 opacity-70" />
+          ) : (
+            <ChevronDown className="w-4 h-4 opacity-70 group-hover:translate-y-0.5 transition-transform" />
+          )}
+        </button>
 
-      <div className="flex flex-col items-center gap-1">
+        <AnimatePresence>
+          {isOpen && (
+            <>
+              {/* Invisible overlay for click-outside */}
+              <div 
+                className="fixed inset-0 z-40" 
+                onClick={() => setIsOpen(false)}
+              />
+              
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.2 }}
+                className="absolute top-full left-0 mt-3 w-64 bg-black/60 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl z-50 overflow-hidden"
+              >
+                <div className="px-4 py-3 border-b border-white/5">
+                  <p className="font-hindi text-[10px] text-white/50 tracking-wider">
+                    हर दुनिया, एक अलग एहसास।
+                  </p>
+                </div>
+                
+                <div className="max-h-[60vh] overflow-y-auto py-1 custom-scrollbar">
+                  {WORLDS.map(world => {
+                    const isActive = world.id === currentWorldId;
+                    
+                    // Derive display values safely from existing data
+                    const englishName = world.id
+                      .split("-")
+                      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                      .join(" ");
+                      
+                    const getEmoji = (id: string) => {
+                      if (id === "1997") return "⏳";
+                      if (id === "general-dibba") return "🚂";
+                      if (id.includes("bus")) return "🚌";
+                      if (id.includes("mandir")) return "🚩";
+                      if (id.includes("adda")) return "👨‍🎤";
+                      if (id.includes("kahin-door")) return "🌎";
+                      if (id.includes("cutting")) return "☕";
+                      if (id.includes("seat")) return "🪟";
+                      if (id.includes("saloon")) return "✂️";
+                      if (id.includes("chai")) return "☕";
+                      if (id.includes("chhat")) return "🌙";
+                      if (id.includes("kendra")) return "💪";
+                      return "✨";
+                    };
+
+                    return (
+                      <button
+                        key={world.id}
+                        onClick={() => {
+                          setIsOpen(false);
+                          if (!isActive) {
+                            onSelectWorld(world);
+                          }
+                        }}
+                        className={`w-full text-left px-4 py-2.5 flex items-center gap-3 transition-colors ${
+                          isActive ? 'bg-white/10' : 'hover:bg-white/5'
+                        }`}
+                      >
+                        <span className="text-xl">{getEmoji(world.id)}</span>
+                        <div className="flex-1 overflow-hidden">
+                          <p className="font-hindi text-sm text-white truncate leading-tight">
+                            {world.title}
+                          </p>
+                          <p className="font-sans text-[10px] text-white/40 uppercase tracking-widest truncate mt-0.5">
+                            {englishName}
+                          </p>
+                        </div>
+                        {isActive && (
+                          <Check className="w-4 h-4 text-brand-amber shrink-0" />
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* MIDDLE: Online Count */}
+      <div className="flex flex-col items-center gap-1 pointer-events-auto">
         <div className="flex items-center gap-2 px-3 py-1 bg-black/40 backdrop-blur-sm rounded-full border border-white/10 text-white/80 text-sm">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -35,7 +131,8 @@ export function TopBar({ onBack }: TopBarProps) {
         </div>
       </div>
 
-      <div className="flex flex-col gap-2 items-end">
+      {/* RIGHT: Social Links */}
+      <div className="flex flex-col gap-2 items-end pointer-events-auto">
         <a
           href="https://open.spotify.com"
           target="_blank"

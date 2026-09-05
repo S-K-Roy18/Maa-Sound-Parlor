@@ -10,9 +10,10 @@ import { MusicPlayer } from "./MusicPlayer";
 interface WorldExperienceProps {
   world: WorldData;
   onExit: () => void;
+  onSelectWorld: (world: WorldData) => void;
 }
 
-export function WorldExperience({ world, onExit }: WorldExperienceProps) {
+export function WorldExperience({ world, onExit, onSelectWorld }: WorldExperienceProps) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -23,7 +24,11 @@ export function WorldExperience({ world, onExit }: WorldExperienceProps) {
     >
       <BackgroundMedia world={world} />
       
-      <TopBar onBack={onExit} />
+      <TopBar 
+        onBack={onExit} 
+        currentWorldId={world.id} 
+        onSelectWorld={onSelectWorld} 
+      />
       
       <WorldTitle world={world} />
       

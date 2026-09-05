@@ -98,7 +98,7 @@ export function LiveChat() {
         }
       } catch (err: any) {
         console.error("Error fetching messages:", err);
-        if (isMounted) setError("Chat अभी थोड़ा आराम कर रहा है...");
+        if (isMounted) setError("आपका Network अभी थोड़ा आराम कर रहा है...");
       } finally {
         if (isMounted) setIsLoading(false);
       }
