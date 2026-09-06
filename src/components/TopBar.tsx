@@ -26,7 +26,7 @@ export function TopBar({ onBack, currentWorldId, onSelectWorld }: TopBarProps) {
       <div className="relative pointer-events-auto">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="group flex items-center gap-1.5 px-3.5 py-1 bg-black/40 backdrop-blur-md rounded-full border border-white/10 text-white/90 hover:bg-black/60 hover:text-white transition-all duration-300 font-hindi text-lg shadow-[0_4px_16px_rgba(0,0,0,0.4)]"
+          className="group flex items-center gap-1.5 px-3.5 py-1 bg-black/40 backdrop-blur-md rounded-full border border-white/10 text-white/90 hover:bg-black/60 hover:text-white transition-all duration-300 font-hindi text-base sm:text-lg shadow-[0_4px_16px_rgba(0,0,0,0.4)]"
         >
           दुनिया
           {isOpen ? (
@@ -53,8 +53,8 @@ export function TopBar({ onBack, currentWorldId, onSelectWorld }: TopBarProps) {
                 className="absolute top-full left-0 mt-3 w-64 bg-black/60 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl z-50 overflow-hidden"
               >
                 <div className="px-4 py-3 border-b border-white/5">
-                  <p className="font-hindi text-[10px] text-white/50 tracking-wider">
-                    हर दुनिया, एक अलग एहसास।
+                  <p className="font-hindi text-[13px]  text-white/50 tracking-wider">
+                    हर दुनिया, एक अलग एहसास ।।
                   </p>
                 </div>
                 
