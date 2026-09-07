@@ -13,7 +13,7 @@ export default function Home() {
   const [isHydrated, setIsHydrated] = useState(false);
 
   useEffect(() => {
-    const savedWorldId = localStorage.getItem("duniya_active_world_id");
+    const savedWorldId = sessionStorage.getItem("duniya_active_world_id");
     if (savedWorldId) {
       const world = WORLDS.find(w => w.id === savedWorldId);
       if (world) {
@@ -25,12 +25,12 @@ export default function Home() {
 
   const handleSelectWorld = (world: WorldData) => {
     setActiveWorld(world);
-    localStorage.setItem("duniya_active_world_id", world.id);
+    sessionStorage.setItem("duniya_active_world_id", world.id);
   };
 
   const handleExitWorld = () => {
     setActiveWorld(null);
-    localStorage.removeItem("duniya_active_world_id");
+    sessionStorage.removeItem("duniya_active_world_id");
   };
 
   if (!isHydrated) {
