@@ -240,7 +240,7 @@ export function LiveChat() {
         </span>
         <span className="font-hindi text-xs sm:text-sm tracking-widest font-medium uppercase mt-0.5">Live Chat</span>
         {unreadCount > 0 && (
-          <span className="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[10px] font-bold px-1.5 min-w-[18px] h-[18px] rounded-full flex items-center justify-center shadow-lg border border-red-400">
+          <span className="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[10px] font-bold px-1.5 min-w-4.5 h-4.5 rounded-full flex items-center justify-center shadow-lg border border-red-400">
             {unreadCount > 9 ? '9+' : unreadCount}
           </span>
         )}
@@ -256,10 +256,10 @@ export function LiveChat() {
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               // Mobile: precise exact bounding box between TopBar and MusicPlayer
-              className="fixed top-[90px] left-3 right-3 bottom-[230px] sm:top-auto sm:left-auto sm:right-8 sm:bottom-24 z-50 flex flex-col justify-end pointer-events-none"
+              className="fixed top-22.5 left-3 right-3 bottom-57.5 sm:top-auto sm:left-auto sm:right-8 sm:bottom-24 z-50 flex flex-col justify-end pointer-events-none"
             >
               {/* Pointer-events-auto applied only to the visible box */}
-              <div className="w-full h-full sm:w-[350px] sm:h-[450px] bg-black/75 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-[0_0_30px_rgba(0,0,0,0.6)] flex flex-col overflow-hidden relative pointer-events-auto">
+              <div className="w-full h-full sm:w-87.5 sm:h-112.5 bg-black/75 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-[0_0_30px_rgba(0,0,0,0.6)] flex flex-col overflow-hidden relative pointer-events-auto">
                   
                   {/* Header */}
                   <div className="px-4 py-3 border-b border-white/10 flex items-center justify-between bg-black/20 shrink-0">
@@ -330,7 +330,7 @@ export function LiveChat() {
                                 {msg.name}
                               </span>
                             )}
-                            <div className={`px-4 py-2.5 rounded-2xl max-w-[85%] break-words ${isMe ? 'bg-brand-amber text-black rounded-tr-sm' : 'bg-white/10 text-white rounded-tl-sm'}`}>
+                            <div className={`px-4 py-2.5 rounded-2xl max-w-[85%] wrap-break-word ${isMe ? 'bg-brand-amber text-black rounded-tr-sm' : 'bg-white/10 text-white rounded-tl-sm'}`}>
                               <p className={`font-hindi text-sm leading-relaxed ${isMe ? 'font-medium' : ''}`}>
                                 {msg.message}
                               </p>
@@ -392,7 +392,7 @@ export function LiveChat() {
                         disabled={!newMessage.trim() || showNamePrompt || isLoading}
                         className="absolute right-1 top-1 bottom-1 aspect-square bg-brand-amber text-black rounded-full flex items-center justify-center hover:bg-yellow-400 transition-colors disabled:opacity-50 disabled:hover:bg-brand-amber"
                       >
-                        <Send className="w-4 h-4 ml-[-2px]" />
+                        <Send className="w-4 h-4 -ml-0.5" />
                       </button>
                     </form>
                     <div className="mt-1 text-right h-3">

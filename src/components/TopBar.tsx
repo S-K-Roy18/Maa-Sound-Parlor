@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Users, ChevronDown, ChevronUp, Check } from "lucide-react";
+import { Users, ChevronDown, ChevronUp, Check, LayoutGrid } from "lucide-react";
 import { WORLDS, WorldData } from "@/data/worlds";
 
 interface TopBarProps {
@@ -112,6 +112,29 @@ export function TopBar({ onBack, currentWorldId, onSelectWorld }: TopBarProps) {
                       </button>
                     );
                   })}
+                </div>
+
+                {/* Return to All Duniyas */}
+                <div className="bg-white/5 border-t border-white/10 p-1">
+                  <button
+                    onClick={() => {
+                      setIsOpen(false);
+                      onBack();
+                    }}
+                    className="w-full text-left px-3 py-1 flex items-center gap-3 transition-colors hover:bg-white/10 rounded-lg group"
+                  >
+                    <div className="w-7 flex justify-center">
+                      <LayoutGrid className="w-5 h-5 text-white/70 group-hover:text-white transition-colors" />
+                    </div>
+                    <div className="flex-1 overflow-hidden">
+                      <p className="font-hindi text-sm text-white/90 group-hover:text-white font-medium truncate leading-tight transition-colors">
+                        सारी दुनियाएँ
+                      </p>
+                      <p className="font-sans text-[10px] text-white/50 group-hover:text-white/70 uppercase tracking-widest truncate mt-0.5 transition-colors">
+                        All Duniya List
+                      </p>
+                    </div>
+                  </button>
                 </div>
               </motion.div>
             </>
