@@ -8,7 +8,7 @@
 
 **An immersive, nostalgic Indian music and community experience.**
 
-[![Live Demo](https://img.shields.io/badge/Live_Website-live--maa--sound--parlor.vercel.app-brand_amber?style=for-the-badge&logo=vercel)](https://live-maa-sound-parlor.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live_Website-live--maa--sound--parlor.vercel.app-brand_amber?style=for-the-badge&logo=vercel)](https://maa-sound-parlor.vercel.app)
 
 </div>
 
