@@ -10,7 +10,7 @@ interface WorldTitleProps {
 
 export function WorldTitle({ world }: WorldTitleProps) {
   return (
-    <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-10 p-4">
+    <div className="hero-content-mobile-shift absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-10 p-4">
       <motion.div
         key={`title-${world.id}`}
         initial={{ opacity: 0, y: 20 }}

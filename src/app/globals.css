@@ -29,6 +29,12 @@ html, body {
   color: var(--foreground);
 }
 
+@media (max-width: 767px) {
+  .hero-content-mobile-shift {
+    transform: translateY(calc(-1 * clamp(1rem, calc(34px - 1vh), 1.75rem)));
+  }
+}
+
 /* Cinematic text shadow */
 .text-cinematic {
   text-shadow: 0 4px 24px rgba(0, 0, 0, 0.8), 0 2px 8px rgba(0, 0, 0, 0.5);
