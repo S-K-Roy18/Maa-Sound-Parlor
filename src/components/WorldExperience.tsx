@@ -32,7 +32,11 @@ export function WorldExperience({ world, onExit, onSelectWorld }: WorldExperienc
       
       <WorldTitle world={world} />
       
-      <MusicPlayer playlistId={world.playlistId} />
+      <MusicPlayer 
+        playlistId={world.playlistId}
+        onSelectWorld={onSelectWorld}
+        currentWorldId={world.id}
+      />
     </motion.div>
   );
 }

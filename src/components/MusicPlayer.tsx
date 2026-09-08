@@ -8,12 +8,16 @@ import {
   Volume2, VolumeX, Disc3, Maximize2, Minimize2 
 } from "lucide-react";
 import { songMetadataOverride } from "@/data/songMetadata";
+import { ActionButtons } from "./ActionButtons";
+import { WorldData } from "@/data/worlds";
 
 interface MusicPlayerProps {
   playlistId: string;
+  onSelectWorld: (world: WorldData) => void;
+  currentWorldId: string;
 }
 
-export function MusicPlayer({ playlistId }: MusicPlayerProps) {
+export function MusicPlayer({ playlistId, onSelectWorld, currentWorldId }: MusicPlayerProps) {
   const [player, setPlayer] = useState<any>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(100);
@@ -226,6 +230,11 @@ export function MusicPlayer({ playlistId }: MusicPlayerProps) {
             </button>
           </motion.div>
         )}
+
+        {/* Action Buttons: above music player card */}
+        <div className="mb-3 px-1 w-full flex justify-center">
+          <ActionButtons onSelectWorld={onSelectWorld} currentWorldId={currentWorldId} />
+        </div>
 
         <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl px-6 py-3 shadow-2xl transition-all duration-500">
           

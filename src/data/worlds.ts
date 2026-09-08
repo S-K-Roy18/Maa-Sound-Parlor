@@ -1,6 +1,7 @@
 export interface WorldData {
   id: string;
   title: string;
+  emoji: string;
   subtitle?: string;
   description: string;
   mediaType: "video" | "image";
@@ -12,6 +13,7 @@ export const WORLDS: WorldData[] = [
   {
     id: "1997",
     title: "1997",
+    emoji: "⏳",
     description: "वो साल जहाँ सब कुछ थोड़ा धीमा था।",
     mediaType: "video",
     background: "/Duniya/1997.mp4",
@@ -20,6 +22,7 @@ export const WORLDS: WorldData[] = [
   {
     id: "general-dibba",
     title: "जनरल डिब्बा",
+    emoji: "🚂",
     description: "सीट मिले या न मिले, सफ़र अपना है।",
     mediaType: "video",
     background: "/Duniya/General Dibba.mp4",
@@ -28,6 +31,7 @@ export const WORLDS: WorldData[] = [
   {
     id: "pehli-cutting",
     title: "पहली कटिंग",
+    emoji: "☕",
     description: "बैठो भैया, कैसी कटिंग करें?",
     mediaType: "video",
     background: "/Duniya/Pehli cutting.mp4",
@@ -36,6 +40,7 @@ export const WORLDS: WorldData[] = [
   {
     id: "chalti-bus",
     title: "चलती बस",
+    emoji: "🚌",
     description: "सीट मिले या ना मिले, गाना चलता रहना चाहिए।",
     mediaType: "video",
     background: "/Duniya/Chalti bus.mp4",
@@ -44,6 +49,7 @@ export const WORLDS: WorldData[] = [
   {
     id: "khidki-wali-seat",
     title: "खिड़की वाली सीट",
+    emoji: "🪟",
     description: "बाहर रास्ता बदलता रहा, अंदर गाना चलता रहा।",
     mediaType: "video",
     background: "/Duniya/Khidki wali seat.mp4",
@@ -52,6 +58,7 @@ export const WORLDS: WorldData[] = [
   {
     id: "raju-saloon",
     title: "राजू सलून",
+    emoji: "✂️",
     description: "बाल कटेंगे, बातें मुफ्त हैं।",
     mediaType: "video",
     background: "/Duniya/Raju saloon.mp4",
@@ -60,6 +67,7 @@ export const WORLDS: WorldData[] = [
   {
     id: "apna-adda",
     title: "अपना अड्डा",
+    emoji: "👨‍🎤",
     description: "जहाँ बिना बुलाए भी दोस्त मिल जाते थे।",
     mediaType: "video",
     background: "/Duniya/Apna Adda.mp4",
@@ -68,6 +76,7 @@ export const WORLDS: WorldData[] = [
   {
     id: "chai-tapri",
     title: "चाय की टपरी",
+    emoji: "🫖",
     description: "एक चाय, थोड़ी बारिश और बहुत सारी बातें।",
     mediaType: "video",
     background: "/Duniya/Chai tapri.mp4",
@@ -76,6 +85,7 @@ export const WORLDS: WorldData[] = [
   {
     id: "kahin-door",
     title: "कहीं दूर",
+    emoji: "🌎",
     description: "आज बस कहीं दूर जाना है।",
     mediaType: "video",
     background: "/Duniya/Kahin door.mp4",
@@ -84,6 +94,7 @@ export const WORLDS: WorldData[] = [
   {
     id: "hanuman-shakti-kendra",
     title: "हनुमान शक्ति केंद्र",
+    emoji: "💪",
     description: "लोहे से दोस्ती करो।",
     mediaType: "image",
     background: "/Duniya/Hanuman Sakti Kendra.png",
@@ -92,6 +103,7 @@ export const WORLDS: WorldData[] = [
   {
     id: "chhat-pe",
     title: "छत पे",
+    emoji: "🌙",
     subtitle: "कुछ देर यहीं बैठते हैं...",
     description: "सूरज ढल गया है, लेकिन शाम अभी बाकी है।",
     mediaType: "video",
@@ -101,9 +113,11 @@ export const WORLDS: WorldData[] = [
   {
     id: "manokamna-mandir",
     title: "मनोकामना मंदिर",
+    emoji: "🚩",
     description: "जहाँ मन की बात बिना कहे भी सुनी जाती है।",
     mediaType: "video",
     background: "/Duniya/Manokamona mandir.mp4",
     playlistId: "PLKRmqBRVje-jjp9Y1hnETx4uIDqIwJMqo",
   },
 ];
+

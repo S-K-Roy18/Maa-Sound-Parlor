@@ -62,27 +62,10 @@ export function TopBar({ onBack, currentWorldId, onSelectWorld }: TopBarProps) {
                   {WORLDS.map(world => {
                     const isActive = world.id === currentWorldId;
                     
-                    // Derive display values safely from existing data
                     const englishName = world.id
                       .split("-")
                       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
                       .join(" ");
-                      
-                    const getEmoji = (id: string) => {
-                      if (id === "1997") return "⏳";
-                      if (id === "general-dibba") return "🚂";
-                      if (id.includes("bus")) return "🚌";
-                      if (id.includes("mandir")) return "🚩";
-                      if (id.includes("adda")) return "👨‍🎤";
-                      if (id.includes("kahin-door")) return "🌎";
-                      if (id.includes("cutting")) return "☕";
-                      if (id.includes("seat")) return "🪟";
-                      if (id.includes("saloon")) return "✂️";
-                      if (id.includes("chai")) return "☕";
-                      if (id.includes("chhat")) return "🌙";
-                      if (id.includes("kendra")) return "💪";
-                      return "✨";
-                    };
 
                     return (
                       <button
@@ -97,7 +80,7 @@ export function TopBar({ onBack, currentWorldId, onSelectWorld }: TopBarProps) {
                           isActive ? 'bg-white/10' : 'hover:bg-white/5'
                         }`}
                       >
-                        <span className="text-xl">{getEmoji(world.id)}</span>
+                        <span className="text-xl">{world.emoji}</span>
                         <div className="flex-1 overflow-hidden">
                           <p className="font-hindi text-sm text-white truncate leading-tight">
                             {world.title}
