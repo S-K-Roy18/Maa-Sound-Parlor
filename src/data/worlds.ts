@@ -29,6 +29,15 @@ export const WORLDS: WorldData[] = [
     playlistId: "PLluqBUTOXDHUjNguM2wgfaVJhC0OHTTqB",
   },
   {
+    id: "gehri-soch",
+    title: "गहरी सोच",
+    emoji: "💭",
+    description: "कुछ बातें सोने नहीं देतीं।",
+    mediaType: "video",
+    background: "/Duniya/Gehri soch.mp4",
+    playlistId: "PL1gfuz7ZYcaM2Z7sCGOWORCF0CGmonzOv",
+  },
+  {
     id: "pehli-cutting",
     title: "पहली कटिंग",
     emoji: "☕",

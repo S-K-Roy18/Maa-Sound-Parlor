@@ -26,7 +26,7 @@ export function TopBar({ onBack, currentWorldId, onSelectWorld }: TopBarProps) {
       <div className="relative pointer-events-auto">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="group flex items-center gap-1.5 px-3.5 py-1 bg-black/40 backdrop-blur-md rounded-full border border-white/10 text-white/90 hover:bg-black/60 hover:text-white transition-all duration-300 font-hindi text-base sm:text-lg shadow-[0_4px_16px_rgba(0,0,0,0.4)]"
+          className="group flex items-center gap-1.5 px-3.5 py-1 bg-black/80 rounded-full border border-white/10 text-white/90 hover:bg-black hover:text-white transition-all duration-300 font-hindi text-base sm:text-lg shadow-lg"
         >
           दुनिया
           {isOpen ? (
@@ -50,7 +50,7 @@ export function TopBar({ onBack, currentWorldId, onSelectWorld }: TopBarProps) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
-                className="absolute top-full left-0 mt-3 w-64 bg-black/60 backdrop-blur-xl border border-white/10 rounded-xl shadow-2xl z-50 overflow-hidden"
+                className="absolute top-full left-0 mt-3 w-64 bg-black/80 border border-white/10 rounded-xl shadow-2xl z-50 overflow-hidden"
               >
                 <div className="px-4 py-3 border-b border-white/5">
                   <p className="font-hindi text-[13px]  text-white/50 tracking-wider">
@@ -82,7 +82,7 @@ export function TopBar({ onBack, currentWorldId, onSelectWorld }: TopBarProps) {
                       >
                         <span className="text-xl">{world.emoji}</span>
                         <div className="flex-1 overflow-hidden">
-                          <p className="font-hindi text-sm text-white truncate leading-tight">
+                          <p className={`font-hindi text-sm truncate leading-tight ${isActive ? 'text-brand-amber' : 'text-white'}`}>
                             {world.title}
                           </p>
                           <p className="font-sans text-[10px] text-white/40 uppercase tracking-widest truncate mt-0.5">

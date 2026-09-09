@@ -90,7 +90,7 @@ export function DuniyaHome({ onSelectWorld }: DuniyaHomeProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.5 }}
-          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-hindi text-brand-mustard text-cinematic animate-pulse px-4"
+          className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-hindi text-brand-amber text-cinematic animate-pulse px-4"
         >
           "आज कहाँ बैठोगे?"
         </motion.h2>
@@ -114,7 +114,7 @@ export function DuniyaHome({ onSelectWorld }: DuniyaHomeProps) {
               onHoverStart={() => setHoveredId(world.id)}
               onHoverEnd={() => setHoveredId(null)}
               onClick={() => onSelectWorld(world)}
-              className={`group relative w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] aspect-4/3 rounded-xl overflow-hidden cursor-pointer shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 border-2 ${isHovered ? 'border-brand-amber shadow-[0_0_40px_rgba(255,191,0,0.4)] z-50' : 'border-transparent z-10'}`}
+              className={`group relative w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] aspect-4/3 rounded-xl overflow-hidden cursor-pointer shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-300 border-2 ${isHovered ? 'border-brand-amber shadow-[0_0_40px_rgba(255,191,0,0.4)] z-50' : 'border-white/10 z-10'}`}
             >
               {/* Note: NO OVERLAYS. Original media only, as requested. */}
               {world.mediaType === "video" ? (

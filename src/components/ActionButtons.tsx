@@ -35,7 +35,7 @@ export function ActionButtons({ onSelectWorld, currentWorldId }: ActionButtonsPr
 
   // 2. WhatsApp Share — always shares main home URL
   const handleShare = () => {
-    const text = "I found this beautiful project. Have a look 👇\n\nhttps://live-maa-sound-parlor.vercel.app";
+    const text = "भाई, playlist नहीं है… पूरी दुनिया है यहाँ. एक बार अंदर आ 😭🎧\n\nhttps://live-maa-sound-parlor.vercel.app";
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
   };
 
@@ -66,13 +66,21 @@ export function ActionButtons({ onSelectWorld, currentWorldId }: ActionButtonsPr
   return (
     <>
       {/* Three equal-width pill buttons */}
-      <div className="flex items-center justify-center gap-1.5 sm:gap-2 w-full flex-wrap">
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.35, ease: "easeOut" }}
+        className="flex items-center justify-center gap-1.5 sm:gap-2 w-full flex-wrap"
+      >
 
         {/* 1. Rotating Duniya */}
-        <button
+        <motion.button
           onClick={() => onSelectWorld(rotatingWorld)}
           className={`${basePill} border border-white/10 text-white/90 hover:bg-black hover:text-white`}
           title={rotatingWorld.title}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.45, ease: "easeOut" }}
         >
           <AnimatePresence mode="wait">
             <motion.span
@@ -87,26 +95,32 @@ export function ActionButtons({ onSelectWorld, currentWorldId }: ActionButtonsPr
               <span className="font-hindi text-xs truncate">{rotatingWorld.title}</span>
             </motion.span>
           </AnimatePresence>
-        </button>
+        </motion.button>
 
         {/* 2. WhatsApp Share */}
-        <button
+        <motion.button
           onClick={handleShare}
           className={`${basePill} border border-green-500/30 text-green-400 hover:bg-black hover:border-green-400 hover:text-green-300`}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.55, ease: "easeOut" }}
         >
           <WhatsAppIcon className="w-4 h-4 shrink-0" />
           <span className="font-sans text-xs font-medium uppercase tracking-wider">Share</span>
-        </button>
+        </motion.button>
 
         {/* 3. Support Me */}
-        <button
+        <motion.button
           onClick={() => setIsSupportOpen(true)}
           className={`${basePill} border border-brand-amber/30 text-brand-amber/90 hover:bg-black hover:border-brand-amber/50 hover:text-brand-amber`}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.65, ease: "easeOut" }}
         >
           <Heart className="w-4 h-4 shrink-0" />
           <span className="font-sans text-xs font-medium uppercase tracking-wider">Support</span>
-        </button>
-      </div>
+        </motion.button>
+      </motion.div>
 
       {/* Support Modal */}
       {typeof document !== "undefined" && createPortal(
@@ -152,7 +166,7 @@ export function ActionButtons({ onSelectWorld, currentWorldId }: ActionButtonsPr
                 <div className="bg-white p-2.5 rounded-2xl mb-3 shadow-xl">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/upi-qr.jpeg"
+                    src="/Duniya/upi-qr.jpeg"
                     alt="UPI QR Code"
                     width={220}
                     height={220}
