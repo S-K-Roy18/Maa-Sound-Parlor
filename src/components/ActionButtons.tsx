@@ -35,7 +35,7 @@ export function ActionButtons({ onSelectWorld, currentWorldId }: ActionButtonsPr
 
   // 2. WhatsApp Share — always shares main home URL
   const handleShare = () => {
-    const text = "भाई, playlist नहीं है… पूरी दुनिया है यहाँ. एक बार अंदर आ 😭🎧\n\nhttps://live-maa-sound-parlor.vercel.app";
+    const text = "भाई, playlist नहीं है… पूरी दुनिया है यहाँ. एक बार अंदर आ 😭🎧\n\nhttps://maa-sound-parlor.vercel.app";
     window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, "_blank");
   };
 
