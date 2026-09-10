@@ -232,7 +232,7 @@ export function MusicPlayer({ playlistId, onSelectWorld, currentWorldId }: Music
         )}
 
         {/* Action Buttons: above music player card */}
-        <div className="mb-3 px-1 w-full flex justify-center">
+        <div className="mb-3 px-1 w-full flex justify-center" data-world-actions="true">
           <ActionButtons onSelectWorld={onSelectWorld} currentWorldId={currentWorldId} />
         </div>
 
